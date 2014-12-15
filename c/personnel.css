@@ -1,0 +1,291 @@
+/******************************
+ * Time : 2014-07-21
+ ******************************
+ * Author : manchun  and  makaiqian
+ ****************************** */
+
+ /* personnel-list.html author:manchun */
+
+ /*引入iconfont字体图标*/
+@font-face {
+  font-family: 'Glyphicons Regular';
+
+  src: url('../dist/fonts/glyphicons-halflings-regular.eot');
+  src: url('../dist/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+    url('../dist/fonts/glyphicons-halflings-regular.woff') format('woff'),
+    url('../dist/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+    url('../dist/fonts/glyphicons-halflings-regular.svg#uxiconfont') format('svg');
+}
+.glyphicons {
+  position: relative;
+  display: inline-block;
+  padding-left: 48px;
+  color: #1d1d1b;
+  vertical-align: middle;
+  text-decoration: none;
+}
+.glyphicons.btn-action,
+.glyphicons-social.btn-action {
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  border-width: 1px;
+  border-style: solid;
+  -webkit-border-radius: 5px 5px 5px 5px;
+     -moz-border-radius: 5px 5px 5px 5px;
+          border-radius: 5px 5px 5px 5px;
+  vertical-align: middle;
+  -webkit-box-shadow: 0 0 0 1px rgba(255, 255, 255, .9) inset;
+     -moz-box-shadow: 0 0 0 1px rgba(255, 255, 255, .9) inset;
+          box-shadow: 0 0 0 1px rgba(255, 255, 255, .9) inset;
+}
+.glyphicons.btn-action i:before,
+.glyphicons-social.btn-action i:before {
+  top: 5px;
+  left: 5px;
+  font-size: 14px;
+  text-shadow: 0 1px 0 #fff;
+}
+.glyphicons.btn-action.btn-info,
+.glyphicons-social.btn-action.btn-info {
+  border-color: #c2d5e1;
+  background: #c2d5e1;
+}
+.glyphicons.btn-action.btn-info i:before,
+.glyphicons-social.btn-action.btn-info i:before {
+  color: #5d92b3;
+}
+.glyphicons.btn-action.btn-success,
+.glyphicons-social.btn-action.btn-success {
+  border-color: rgba(88, 110, 84, .2);
+  background: rgba(88, 110, 84, .1);
+}
+.glyphicons.btn-action.btn-success i:before,
+.glyphicons-social.btn-action.btn-success i:before {
+  color: #586e54;
+}
+.glyphicons.btn-action.btn-danger,
+.glyphicons-social.btn-action.btn-danger {
+  border-color: rgba(116, 70, 70, .2);
+  background: rgba(116, 70, 70, .1);
+}
+.glyphicons.btn-action.btn-danger i:before,
+.glyphicons-social.btn-action.btn-danger i:before {
+  color: #744646;
+}
+
+.table td.center, .table th.center {
+  text-align: center;
+}
+.glyphicons.eye_open i:before {
+  content: '\e105';
+}
+.glyphicons.pencil i:before {
+  content: '\270F';
+}
+.glyphicons.remove_2 i:before {
+  content: '\e014';
+}
+.glyphicons i:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  font: 24px/1em 'Glyphicons Regular';
+  font-weight: normal;
+  font-style: normal;
+  color: #1d1d1b;
+  text-transform: none;
+
+  -webkit-font-smoothing: antialiased;
+}
+ /* personnel-list.html end */
+
+/* 登录 */
+.login-body {
+  padding-top: 160px;
+  background: url(../i/login-bg.jpg) repeat;
+}
+.login-box {
+  width: 460px;
+  margin: 0 auto;
+  -webkit-box-shadow: 2px 2px 10px rgba(0,0,0,.7);
+          box-shadow: 2px 2px 10px rgba(0,0,0,.7);
+}
+.login-header {
+  position: relative;
+  background: url(../i/login-header-bg.jpg) repeat;
+}
+.login-logo {
+  height: 120px;
+  background: url(../i/login-logo.png) 30px 35px no-repeat;
+}
+.login-shadow {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 460px;
+  height: 12px;
+  background: url(../i/login-shadow.png) 4px top repeat-x;
+}
+.login-cont {
+  padding: 50px 20px;
+  background-color: #fafafa;
+}
+#login-msg {
+  display: none;
+  font-size: 12px;
+}
+/* 登录 end */
+
+/* setting */
+.setting-box {
+  min-height: 510px;
+  padding: 20px 20px 50px;
+  border: 1px solid #c2d4de;
+  background-color: #f5f5f5;
+}
+
+.setting-section {
+  max-width: 900px;
+  padding: 0 20px;
+}
+.setting-skill {
+  max-width: 900px;
+  padding: 0 20px;
+  line-height: 30px;
+}
+.setting-badge {
+  margin-left: 3px;
+  background-color: rgba(255,255,255,.7);
+  color: #21a9e1;
+}
+#user-msg,
+#psw-msg {
+  display: none;
+  font-size: 12px;
+}
+.skill-name {
+  display: inline-block;
+  margin-right: 8px;
+}
+.setting-header {
+  height: 40px;
+  background-color: #f5f5f5;
+}
+.setting-header li.active .setting-tab,
+.setting-header li.active .setting-tab:hover {
+  border: 1px solid #c2d4de;
+  border-bottom-color: transparent;
+  background-color: #f5f5f5;
+}
+/* setting end */
+
+/* msg shake */
+.msg-shake{
+  -webkit-animation: shake .6s;
+       -o-animation: shake .6s;
+          animation: shake .6s;
+}
+
+@-webkit-keyframes shake {
+  0% {
+    padding-left: 15px;
+  }
+  20% {
+    padding-left: 25px;
+  }
+  40% {
+    padding-left: 15px;
+  }
+  60% {
+    padding-left: 25px;
+  }
+  80% {
+    padding-left: 15px;
+  }
+  100% {
+    padding-left: 25px;
+  }
+};
+@-moz-keyframes shake {
+  0% {
+    padding-left: 15px;
+  }
+  20% {
+    padding-left: 25px;
+  }
+  40% {
+    padding-left: 15px;
+  }
+  60% {
+    padding-left: 25px;
+  }
+  80% {
+    padding-left: 15px;
+  }
+  100% {
+    padding-left: 25px;
+  }
+};
+@-ms-keyframes shake {
+  0% {
+    padding-left: 15px;
+  }
+  20% {
+    padding-left: 25px;
+  }
+  40% {
+    padding-left: 15px;
+  }
+  60% {
+    padding-left: 25px;
+  }
+  80% {
+    padding-left: 15px;
+  }
+  100% {
+    padding-left: 25px;
+  }
+};
+@-o-keyframes shake {
+  0% {
+    padding-left: 15px;
+  }
+  20% {
+    padding-left: 25px;
+  }
+  40% {
+    padding-left: 15px;
+  }
+  60% {
+    padding-left: 25px;
+  }
+  80% {
+    padding-left: 15px;
+  }
+  100% {
+    padding-left: 25px;
+  }
+};
+@keyframes shake {
+  0% {
+    padding-left: 15px;
+  }
+  20% {
+    padding-left: 25px;
+  }
+  40% {
+    padding-left: 15px;
+  }
+  60% {
+    padding-left: 25px;
+  }
+  80% {
+    padding-left: 15px;
+  }
+  100% {
+    padding-left: 25px;
+  }
+};
+/* msg shake end */

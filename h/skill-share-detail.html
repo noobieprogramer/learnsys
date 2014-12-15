@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>文章详情</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../c/common.css">
+  <link rel="stylesheet" href="../c/skill.css">
+  <style>
+    [ms-controller] {
+      display: none;
+    }
+  </style>
+</head>
+<body ms-controller="skillLearn">
+  <!-- header -->
+  <div class="ls-header">
+    <div class="container">
+      <!-- logo -->
+      <a href="javascript:;" class="logo">logo</a>
+      <!-- logo end -->
+      
+      <!-- nav -->
+      <ul class="nav nav-pills">
+        <li><a href="javascript:;">首页</a></li>
+        <li><a href="javascript:;">最新动态</a></li>
+        <li><a href="javascript:;">技能管理</a></li>
+        <li><a href="javascript:;">我的题库</a></li>
+        <li><a href="javascript:;">用户中心</a></li>
+      </ul>
+      <!-- nav -->
+
+      <!-- user -->
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+          用户名
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="javascript:;">补填资料</a></li>
+          <li><a tabindex="-1" href="javascript:;">修改密码</a></li>
+          <li><a tabindex="-1" href="javascript:;">其他</a></li>
+        </ul>
+      </div>
+      <!-- user end -->
+    </div>
+  </div>
+  <!-- header end -->
+
+  <!-- 描述 -->
+  <div class="describe">
+    <div class="container">
+      <div class="col-md-9">
+        <h2 class="text-blue-dark">技能分享</h2>
+        <p>技能分享模块</p>
+      </div>
+      <div class="col-md-3">
+        <div class="input-group">
+          <input type="text" class="form-control">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">搜索</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 描述 end -->
+
+  <!-- 主体 -->
+  <div class="wrap">
+    <div class="web-document clearfix">
+      <!-- menu -->
+      <div class="ls-menu">
+        <ul>
+          <li class="hasSubmenu active">
+            <a class="glyphicon glyphicon-calendar"><i></i><span> 技能管理</span></a>
+            <ul class="collapse in">
+              <li><a href="javascript:;"><span>技能列表</span></a></li>
+              <li class="active"><a href="javascript:;"><span>添加技能</span></a></li>
+              <li><a href="javascript:;"><span>添加技能学习</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- menu end -->
+      <div class="web-content">
+        <ol class="breadcrumb">
+          <li><a href="#">首页</a></li>
+          <li><a href="#">技能模块</a></li>
+          <li><a href="#">技能分享</a></li>
+          <li class="active">文章详情</li>
+        </ol>
+        <div class="cont clearfix">
+          <div class="task-header" id="share-content">
+            <div class="task-num">
+              <p class="pull-right">
+                <a href="javascript:;" id="btn-share-edit"><i class="glyphicon glyphicon-edit"></i> 编辑</a>
+                <a href="javascript:;" data-shareid="1" ms-if="isCollect" ms-click="collectShare"><i class="glyphicon glyphicon-gift"></i>收藏
+                </a>
+                <a href="javascript:;" data-shareid="1" ms-if="!isCollect" ms-click="collectShare"><i class="glyphicon glyphicon-gift"></i> 取消收藏
+                </a>
+              </p>
+              <h1>This is a title</h1>
+            </div>
+            <div class="media task-image">
+              <a class="pull-left" href="javascript:;"><img class="media-object" src="../i/default_s.jpg" alt="..."></a>
+              <div class="media-body">
+                <p class="text-grey-666">
+                  作者：<span class="text-green">hxw </span> 时间：<span>2014年5月20日 14:23</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="form-horizontal">
+              <p>原文链接：<a href="http://www.baidu.com">http://www.baidu.com</a></p>
+              <pre class="pre" id="find-pre-height">最后总结下HTML5实现拖拽上传的技术要点：
+1、监听拖拽：监听页面元素的拖拽事件，包括：dragenter、dragover、dragleave和drop，一定要将dragover的默认事件取消掉，不然无法触发drop事件。如需拖拽页面里的元素，需要给其添加属性draggable=”true”；
+2、获取拖拽文件：在drop事件触发后通过e.dataTransfer.files获取拖拽文件列表，.length属性获取文件数量，.
+3、读取图片数据并添加预览图。
+4、发送图片数据：使用FormData模拟表单数据AJAX提交文件流。
+              </pre>
+            </div>
+          </div>
+          <h3>评论</h3>
+          <ul class="list-style list-unstyled task-history">
+            <li ms-repeat="commentData"><div class="media">
+              <a class="pull-left" href="javascript:;"><img class="media-object" src="../i/default_s.jpg"></a>
+              <div class="media-body">
+                <h4 class="media-heading"><span class="pull-right text-orange">#{{ $index + 1 }}</span>{{ el.username }}</h4>
+                <pre class="pre">{{ el.content }}</pre>
+              </div>
+            </div>
+            </li>
+          </ul>
+          <form class="form-horizontal" ms-on-submit="commentSubmit">
+            <div class="form-group">
+            <label class="col-sm-1 control-label">评论</label>
+            <div class="col-sm-9">
+               <textarea class="form-control validate" ms-duplex="commentContent" name="refUI" rows="5"></textarea>
+            </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-1 col-sm-9 text-center fade" ms-class="in:commentIsNull">
+                <div class="alert alert-danger" role="alert">请填写完整</div>
+              </div>
+              <button type="button" class="btn btn-success col-sm-5 col-sm-offset-3" ms-click="commentSubmit"><i class="glyphicon glyphicon-check"></i> 提交</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 主体 end -->
+  <script type="text/tmpl" id="edit-share">
+    <form class="task-header" method="post">
+      <div class="task-num">
+        <p class="pull-right">
+          <a href="javascript:;" id="btn-share-save"><i class="glyphicon glyphicon-edit"></i> 保存</a>
+        </p>
+        <input type="text" name="title" value="This is a title" class="share-title">
+      </div>
+      <div class="media task-image">
+        <a class="pull-left" href="javascript:;"><img class="media-object" src="../i/default_s.jpg" alt="..."></a>
+        <div class="media-body">
+          <p class="text-grey-666">
+            作者：<span class="text-green">hxw </span>
+          </p>
+        </div>
+      </div>
+      <div class="form-horizontal">
+        <p>原文链接：<input value="http://www.baidu.com" class="pre-link" name="contentUrl" ></p>
+        <textarea class="pre-edit" name="content">最后总结下HTML5实现拖拽上传的技术要点：
+1、监听拖拽：监听页面元素的拖拽事件，包括：dragenter、dragover、dragleave和drop，一定要将dragover的默认事件取消掉，不然无法触发drop事件。如需拖拽页面里的元素，需要给其添加属性draggable=”true”；
+2、获取拖拽文件：在drop事件触发后通过e.dataTransfer.files获取拖拽文件列表，.length属性获取文件数量，.
+3、读取图片数据并添加预览图。
+4、发送图片数据：使用FormData模拟表单数据AJAX提交文件流。
+        </textarea>
+      </div>
+    </form>
+  </script>
+
+  <script>
+    window.oYpConfig = {
+      // js根路径
+      baseUrl: '../j/'
+    };
+    // 页面URL请求配置
+    window.oPageConfig = {
+      oUrl: {
+        note: '/note'
+      , shareCollect: '/shareCollect'
+      , comments: '/comments'
+      }
+    , oData: {
+        isCollect: false
+      , comments: [
+          {
+            username: '蜡笔小心'
+          , content: 'lalalalalalal'
+          }
+        , {
+            username: '蓝胖子'
+          , content: 'lalalalalalal'
+          }
+        ]
+      }
+    }
+  </script>
+  <script src="../j/yp/lib/yp-min.js"></script>
+  <script src="../j/test/skill/skill-share.js"></script>
+  <script src="../j/skill/skill-learn.js"></script>
+</body>
+</html>

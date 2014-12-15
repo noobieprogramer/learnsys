@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>技能列表</title>
+  <link rel="stylesheet" href="../dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../c/common.css">
+  <link rel="stylesheet" href="../c/skill.css">
+</head>
+<body>
+
+<!-- header -->
+<div class="ls-header">
+  <div class="container">
+    <!-- logo -->
+    <a href="javascript:;" class="logo">logo</a>
+    <!-- logo end -->
+    
+    <!-- nav -->
+    <ul class="nav nav-pills" role="tablist">
+      <li><a href="javascript:;">首页</a></li>
+      <li><a href="javascript:;">最新动态</a></li>
+      <li><a href="javascript:;">技能管理</a></li>
+      <li><a href="javascript:;">我的题库</a></li>
+      <li><a href="javascript:;">用户中心</a></li>
+    </ul>
+    <!-- nav -->
+
+    <!-- user -->
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+        用户名
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">补填资料</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">修改密码</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">其他</a></li>
+      </ul>
+    </div>
+    <!-- user end -->
+  </div>
+</div>
+<!-- header end -->
+
+<!-- 描述 -->
+<div class="describe">
+  <div class="container">
+    <div class="col-md-9">
+      <h2 class="text-blue-dark">技能列表</h2>
+      <p>技能列表</p>
+    </div>
+    <div class="col-md-3">
+      <div class="input-group">
+        <input type="text" class="form-control">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">搜索</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 描述 end -->
+
+
+<div class="ls-wrap clearfix">
+  <!-- menu -->
+  <div class="ls-menu">
+    <ul>
+      <li class="hasSubmenu active">
+        <a class="glyphicon glyphicon-calendar"><i></i><span> 技能管理</span></a>
+        <ul class="collapse in">
+          <li class="active"><a href="javascript:;"><span>技能列表</span></a></li>
+          <li><a href="javascript:;"><span>添加技能</span></a></li>
+          <li><a href="javascript:;"><span>添加技能学习</span></a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <!-- menu end -->
+
+  <!-- content -->
+  <div class="ls-content">
+    <!-- 路径导航 -->
+    <ol class="breadcrumb">
+      <li><a href="#">首页</a></li>
+      <li class="active">技能列表</li>
+    </ol>
+    <!-- 路径导航 end -->
+    
+    <!-- 内容 -->
+    <div class="cont">
+      <table class="table web-table  table-striped table-hover table-backstage" id="yp-table-skill-list">
+        <thead>
+          <th width="30%">技能名称</th>
+          <th width="25%">技能类型</th>
+          <th width="30%">有效期限</th>
+          <th width="15%">操作</th>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div id="pagination" class="clearfix"></div>
+      <div class="padding-set">
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <input type="hidden" value="1">
+            <label class="col-sm-2 control-label">技能名称:</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" placeholder="技能名称">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">技能类别:</label>
+            <div class="col-sm-9">
+              <select class="form-control">
+                <option value="1" >html5</option>
+                <option value="2" >css3</option>
+                <option value="3" >javascript</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">有效期限:</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" placeholder="有效期限" id="datetimepicker">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-9 text-center hide">
+              <div class="alert alert-danger" role="alert">请填写完整</div>
+            </div>
+            <div class="col-sm-offset-5 col-sm-3">
+              <button type="button" class="btn btn-primary col-sm-5" id="yp-btn-edit-save">保存</button>
+              <button type="button" class="btn btn-default col-sm-5 col-sm-offset-2">返回</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- 内容 end -->
+  </div>
+  <!-- content end -->
+</div>
+
+<script>
+    window.oYpConfig = {
+      // js根路径
+      baseUrl: '../j/'
+    };
+    // 页面URL请求配置
+    window.oPageConfig = {
+      oUrl: {
+        skill: {
+          get: 'get'
+        }
+      }
+    , oData: {
+        page: 5
+      }
+    }
+  </script>
+<script src="../j/yp/lib/yp-min.js"></script>
+<!-- test -->
+<script src="../j/test/skill/backstage-skill-list.js"></script>
+<!-- test end -->
+<script src="../j/skill/backstage-skill-list.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>首页</title>
+  <link rel="stylesheet" href="../dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../c/common.css">
+  <link rel="stylesheet" href="../c/index.css">
+</head>
+<body>
+
+<!-- header -->
+<div class="ls-header">
+  <div class="container">
+    <!-- logo -->
+    <a href="javascript:;" class="logo">logo</a>
+    <!-- logo end -->
+    
+    <!-- nav -->
+    <ul class="nav nav-pills" role="tablist">
+      <li><a href="javascript:;">首页</a></li>
+      <li><a href="javascript:;">最新动态</a></li>
+      <li><a href="javascript:;">技能管理</a></li>
+      <li><a href="javascript:;">我的题库</a></li>
+      <li><a href="javascript:;">用户中心</a></li>
+    </ul>
+    <!-- nav -->
+
+    <!-- user -->
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+        用户名
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">补填资料</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">修改密码</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">其他</a></li>
+      </ul>
+    </div>
+    <!-- user end -->
+  </div>
+</div>
+<!-- header end -->
+
+<!-- 描述 -->
+<div class="describe">
+  <div class="container">
+    <div class="col-md-9">
+      <h2 class="text-blue-dark">模块名称</h2>
+      <p>此模块描述信息。。。。。此模块描述信息。。。。。此模块描述信息。。。。。</p>
+    </div>
+    <div class="col-md-3">
+      <div class="input-group">
+        <input type="text" class="form-control">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">搜索</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 描述 end -->
+
+
+<div class="ls-wrap clearfix">
+  <!-- menu -->
+  <div class="ls-menu">
+    <ul>
+      <li class="hasSubmenu active">
+        <a class="glyphicon glyphicon-calendar"><i></i><span> 我的任务</span></a>
+        <ul class="collapse in">
+          <!-- 我的任务 -->
+          <li class=""><a href="javascript:;"><span>创建新任务</span></a></li>
+          <li class="active"><a href="javascript:;"><span>我发布的任务</span></a></li>
+          <li class=""><a href="javascript:;"><span>我执行的任务</span></a></li>
+          <!-- 我的任务 end -->
+        </ul>
+      </li>
+      <li class="hasSubmenu">
+        <a class="glyphicon glyphicon-credit-card"><i></i><span> 平台管理</span></a>
+        <ul class="collapse in">
+          <!-- 平台管理 -->
+          <li class=""><a href="javascript:;"><span>任务库</span></a></li>
+          <li class=""><a href="javascript:;"><span>指标统计</span></a></li>
+          <li class=""><a href="javascript:;"><span>指标总数</span></a></li>
+          <!-- 平台管理 end -->
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <!-- menu end -->
+
+  <!-- content -->
+  <div class="ls-content">
+    <!-- 路径导航 -->
+    <ol class="breadcrumb">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Library</a></li>
+      <li class="active">Data</li>
+    </ol>
+    <!-- 路径导航 end -->
+    
+    <!-- 内容 -->
+    <div class="container">
+      内容模块
+    </div>
+    <!-- 内容 end -->
+  </div>
+  <!-- content end -->
+</div>
+
+
+<script src="../dist/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

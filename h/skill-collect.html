@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>习题收藏</title>
+  <link rel="stylesheet" href="../dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../c/common.css">
+  <link rel="stylesheet" href="../c/skill.css">
+</head>
+<body>
+
+<!-- header -->
+<div class="ls-header">
+  <div class="container">
+    <!-- logo -->
+    <a href="javascript:;" class="logo">logo</a>
+    <!-- logo end -->
+    
+    <!-- nav -->
+    <ul class="nav nav-pills" role="tablist">
+      <li><a href="javascript:;">首页</a></li>
+      <li><a href="javascript:;">最新动态</a></li>
+      <li><a href="javascript:;">技能管理</a></li>
+      <li><a href="javascript:;">我的题库</a></li>
+      <li><a href="javascript:;">用户中心</a></li>
+    </ul>
+    <!-- nav -->
+
+    <!-- user -->
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+        用户名
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">补填资料</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">修改密码</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">其他</a></li>
+      </ul>
+    </div>
+    <!-- user end -->
+  </div>
+</div>
+<!-- header end -->
+
+<!-- 描述 -->
+<div class="describe">
+  <div class="container">
+    <div class="col-md-9">
+      <h2 class="text-blue-dark">技能挑战</h2>
+      <p>该技能挑战有效期为12个月，你需要在一个小时内完成</p>
+    </div>
+    <div class="col-md-3">
+      <div class="input-group">
+        <input type="text" class="form-control">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">搜索</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 描述 end -->
+
+<!-- 挑战题目 -->
+<div class="container ls-list">
+  <div class="panel panel-default">
+    <div class="panel-heading">我的习题收藏本</div>
+    <div class="panel-body">
+      <form class="form-inline text-center" role="form">
+        <select class="form-control" id="question-class">
+          <option value="all" select>所有类型题目</option>
+          <option value="jquery">JQuery</option>
+          <option value="css3">HTML5和CSS3</option>
+          <option value="yp">YP框架</option>
+        </select>
+      </form>
+      <hr>
+      <ol id="allcollect">
+        <li class="class-jquery">
+          <div>下面哪种不是jquery的选择器？</div>
+          <form class="form-group" id="answers1">
+            <div class="radio">
+              <label>
+                <input type="radio" name="answer">A、基本选择器
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="answer">B、后代选择器
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="answer">C、类选择器
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="answer">D、进一步选择器
+              </label>
+            </div>
+          </form>
+        </li>
+        <li class="class-css3">
+          <div>当DOM加载完成后要执行的函数，下面哪个是正确的？</div>
+          <form class="form-group">
+            <div class="radio">
+              <label>
+                <input type="radio" name="answer">A、jQuery(expression, [context])
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="answer">B、jQuery(html, [ownerDocument])
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="answer">C、jQuery(callback)
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="answer">D、jQuery(elements)
+              </label>
+            </div>
+          </form>
+        </li>
+        <li class="class-yp">
+          <div class="hignlight">下面哪种不是jquery的选择器？</div>
+          <form class="form-group">
+            <div class="radio">
+              <label>
+                <input type="radio" name="answer">A、基本选择器
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="answer">B、后代选择器
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="answer">C、类选择器
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="answer">D、进一步选择器
+              </label>
+            </div>
+          </form>
+        </li>
+        <li class="class-yp">
+          <div>当DOM加载完成后要执行的函数，下面哪个是正确的？</div>
+          <form class="form-group">
+            <div class="radio">
+              <label>
+                <input type="radio" name="answer">A、jQuery(expression, [context])
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="answer">B、jQuery(html, [ownerDocument])
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="answer">C、jQuery(callback)
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="answer">D、jQuery(elements)
+              </label>
+            </div>
+          </form>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
+<!-- 挑战题目 end -->
+
+
+<script>
+  window.oYpConfig = {
+    // js根路径
+    baseUrl: '../j/'
+  };
+
+  // 页面URL请求配置
+  window.oPageConfig = {
+    oUrl: {}
+  , oData: {}
+  }
+</script>
+<script src="../j/yp/lib/yp-min.js"></script>
+<script src="../j/skill/skill-collect.js"></script>
+
+
+
+</body>
+</html>

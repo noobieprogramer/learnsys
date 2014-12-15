@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>人员管理</title>
+  <link rel="stylesheet" href="../dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../c/common.css">
+  <link rel="stylesheet" href="../c/personnel.css">
+</head>
+<body>
+<!-- header -->
+<div class="ls-header">
+  <div class="container">
+    <!-- logo -->
+    <a href="javascript:;" class="logo">logo</a>
+    <!-- logo end -->
+    
+    <!-- nav -->
+    <ul class="nav nav-pills" role="tablist">
+      <li><a href="javascript:;">首页</a></li>
+      <li><a href="javascript:;">最新动态</a></li>
+      <li><a href="javascript:;">技能管理</a></li>
+      <li><a href="javascript:;">我的题库</a></li>
+      <li><a href="javascript:;">用户中心</a></li>
+    </ul>
+    <!-- nav -->
+
+    <!-- user -->
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+        用户名
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">补填资料</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">修改密码</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">其他</a></li>
+      </ul>
+    </div>
+    <!-- user end -->
+  </div>
+</div>
+<!-- header end -->
+
+<!-- 描述 -->
+<div class="describe">
+  <div class="container">
+    <div class="col-md-9">
+      <h2 class="text-blue-dark">人员模块</h2>
+      <p>员工列表信息</p>
+    </div>
+    <div class="col-md-3">
+      <div class="input-group">
+        <input type="text" class="form-control">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">搜索</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 描述 end -->
+
+<div class="ls-wrap clearfix">
+  <div class="ls-menu">
+    <ul>
+      <li class="hasSubmenu active">
+        <a class="glyphicon glyphicon-calendar"><i></i><span> 用户中心</span></a>
+        <ul class="collapse in">
+          <!-- 我的任务 -->
+          <li><a href="personnel.html"><span>人员信息</span></a></li>
+          <li class="active"><a href="personnel-list-js.html" id="personnel-list-link"><span>人员列表</span></a></li>
+          <!-- 我的任务 end -->
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="ls-content">
+    <!-- 路径导航 -->
+    <ol class="breadcrumb">
+      <li><a href="#">首页</a></li>
+      <li><a href="#">人员模块</a></li>
+      <li class="active">人员列表</li>
+    </ol>
+    <!-- 路径导航 end -->
+
+    <!-- 内容 -->
+    <div class="container">
+      <table class="table table-bordered table-condensed table-striped table-hover" id="yp-presonnel-list-table">
+        <thead>
+          <tr>
+            <th>人员姓名</th>
+            <th>口令</th>
+            <th>联系方式</th>
+            <th>个人主页</th>
+            <th>电子邮箱</th>
+            <th width="170px">web 技能</th>
+            <th class="center" width="100">操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="selectable" data-id="0">
+            <td>满春</td>
+            <td>mc123456</td>
+            <td>18868440602</td>
+            <td>www.baidu.com</td>
+            <td>manchun@bianfeng.com</td>
+            <td>css, js, jq</td>
+            <td class="center">
+              <a title="查看" href="personnel.html?uid=8888" class="btn-action glyphicons eye_open btn-success"><i></i></a>
+              <a title="编辑" href="personnel.html?uid=8888" class="btn-action glyphicons pencil btn-success"><i></i></a>
+              <a title="删除" href="javascript:;" class="btn-action glyphicons remove_2 btn-danger yp-btn-remove"><i></i></a>
+            </td>
+          </tr>
+          <tr class="selectable" data-id="1">
+            <td>麻凯倩</td>
+            <td>mkq123456</td>
+            <td>111111111</td>
+            <td>www.baidu.com</td>
+            <td>makaiqian@bianfeng.com</td>
+            <td>css, js, jq</td>
+            <td class="center">
+              <a title="查看" href="personnel.html?uid=8888" class="btn-action glyphicons eye_open btn-success"><i></i></a>
+              <a title="编辑" href="javascript:;" class="btn-action glyphicons pencil btn-success"><i></i></a>
+              <a title="删除" href="javascript:;" class="btn-action glyphicons remove_2 btn-danger yp-btn-remove"><i></i></a>
+            </td>
+          </tr>
+          <tr class="selectable" data-id="2">
+            <td>黄笑雯</td>
+            <td>hxw123456</td>
+            <td>111111111</td>
+            <td>www.baidu.com</td>
+            <td>huangxiaowen@bianfeng.com</td>
+            <td>css, js, jq</td>
+            <td class="center">
+              <a title="查看" href="personnel.html?uid=8888" class="btn-action glyphicons eye_open btn-success"><i></i></a>
+              <a title="编辑" href="javascript:;" class="btn-action glyphicons pencil btn-success"><i></i></a>
+              <a title="删除" href="javascript:;" class="btn-action glyphicons remove_2 btn-danger yp-btn-remove"><i></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- 内容 end -->
+  </div>
+</div>
+<script>
+  window.oYpConfig = {
+    // js根路径
+    baseUrl: '../j/'
+  };
+
+  // 页面URL请求配置
+  window.oPageConfig = {
+    oUrl: {
+      delUser: 'user/del'
+    , getListInfo: 'user/getListInfo'
+    }
+  , oData: {
+      uid: "8888"
+    , permission: '0'
+  }
+  }
+</script>
+
+<script src="../j/yp/lib/yp-min.js"></script>
+<!-- test -->
+<script src="../j/test/ucenter/personnel-list.js"></script>
+<!-- test end -->
+
+<script src='../j/ucenter/personnel-list.js'></script>
+</body>
+</html>

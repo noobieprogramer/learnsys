@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>学习模式</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../c/common.css">
+  <link rel="stylesheet" href="../c/skill.css">
+</head>
+<body ms-controller="skillLearn">
+  <!-- header -->
+  <div class="ls-header">
+    <div class="container">
+      <!-- logo -->
+      <a href="javascript:;" class="logo">logo</a>
+      <!-- logo end -->
+      
+      <!-- nav -->
+      <ul class="nav nav-pills">
+        <li><a href="javascript:;">首页</a></li>
+        <li><a href="javascript:;">最新动态</a></li>
+        <li><a href="javascript:;">技能管理</a></li>
+        <li><a href="javascript:;">我的题库</a></li>
+        <li><a href="javascript:;">用户中心</a></li>
+      </ul>
+      <!-- nav -->
+
+      <!-- user -->
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+          用户名
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="javascript:;">补填资料</a></li>
+          <li><a tabindex="-1" href="javascript:;">修改密码</a></li>
+          <li><a tabindex="-1" href="javascript:;">其他</a></li>
+        </ul>
+      </div>
+      <!-- user end -->
+    </div>
+  </div>
+  <!-- header end -->
+
+  <!-- 描述 -->
+  <div class="describe">
+    <div class="container">
+      <div class="col-md-9">
+        <h2 class="text-blue-dark">技能学习</h2>
+        <p>技能学习模块</p>
+      </div>
+      <div class="col-md-3">
+        <div class="input-group">
+          <input type="text" class="form-control">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">搜索</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 描述 end -->
+
+  <!-- 主体部分 -->
+  <div class="wrap">
+    <div class="web-document clearfix">
+      <!-- menu -->
+      <div class="ls-menu">
+        <ul>
+          <li class="hasSubmenu active">
+            <a class="glyphicon glyphicon-calendar"><i></i><span> 技能管理</span></a>
+            <ul class="collapse in">
+              <li><a href="javascript:;"><span>技能列表</span></a></li>
+              <li class="active"><a href="javascript:;"><span>添加技能</span></a></li>
+              <li><a href="javascript:;"><span>添加技能学习</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- menu end -->
+      <!-- 右侧主体部分 -->
+      <div class="ls-content">
+        <!--面包屑-->
+        <ol class="breadcrumb">
+          <li><a href="javascript:;">首页</a></li>
+          <li><a href="javascript:;">jQuery</a></li>
+          <li class="active">学习</li>
+        </ol>
+        <!--面包屑 end-->
+        
+        <div class="cont">
+          <div class="wiki-content">
+            <!-- 固定导航 -->
+              <div class="wiki-catelog fix-nav" id="fix-nav">
+                <h4>+目录+</h4>
+                <ul class="nav">
+                  <li>
+                    <a href="#tab_0">※what is jquery?</a>
+                  </li>
+                  <li>
+                    <a href="#tab_1">※语法</a>
+                    <ul class="nav">
+                      <li><a href="#tab_2">标题<span class="link-note" data-toggle="modal" data-target="#checknote">[note]</span></a></li>
+                      <li><a href="#tab_3">加粗<span class="link-note" data-toggle="modal" data-target="#checknote">[note]</span></a></li>
+                      <li><a href="#tab_4">Event Handling<span class="link-note" data-toggle="modal" data-target="#checknote">[note]</span></a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            <!-- 固定导航 end -->
+            <div class="wiki-title">jQuery 1.11.1</div>
+            <h1 id="tab_0" class="section-waypoint">What is jQuery?</h1>
+            <p>jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.</p>
+
+            <h1 id="tab_1" class="section-waypoint">语法</h1>
+            <h2 id="tab_2" class="section-waypoint">标题
+              <span class="glyphicon glyphicon-pencil note-icon" data-toggle="modal" data-target="#addnote" data-backdrop="static">
+                <a href="../j/test/skill/ajax.html?width=375" class="jTip" id="one" name="Password must follow these rules:">?</a>
+              </span>
+            </h2>
+            <p>Get the &lt;button&gt;element with the class 'continue' and change its HTML to 'Next Step...'</p>
+            <pre><code>$( "button.continue" ).html( "Next Step..." )</code></pre>
+            <p>Get the &lt;button&gt;element with the class 'continue' and change its HTML to 'Next Step...'</p><p>Get the &lt;button&gt;element with the class 'continue' and change its HTML to 'Next Step...'</p><p>Get the &lt;button&gt;element with the class 'continue' and change its HTML to 'Next Step...'</p>
+            <h2 id="tab_3" class="section-waypoint">加粗</h2>
+            <p>Show the #banner-message element that is hidden with  display:none in its CSS when any button in #button-container is clicked.</p>
+            <blockquote>
+              <p>var hiddenBox = $( "#banner-message" );
+                   $( "#button-container button" ).on( "click", function( event ) {
+                     hiddenBox.show();
+                   });</p>
+            </blockquote>
+            <p>Get the &lt;button&gt;element with the class 'continue' and change its HTML to 'Next Step...'</p><p>Get the &lt;button&gt;element with the class 'continue' and change its HTML to 'Next Step...'</p><p>Get the &lt;button&gt;element with the class 'continue' and change its HTML to 'Next Step...'</p><p>Get the &lt;button&gt;element with the class 'continue' and change its HTML to 'Next Step...'</p><p>Get the &lt;button&gt;element with the class 'continue' and change its HTML to 'Next Step...'</p>
+            <h2 id="tab_4" class="section-waypoint">Event Handling</h2>
+            <p>Show the #banner-message element that is hidden with  display:none in its CSS when any button in #button-container is clicked.</p>
+            <pre><code>var hiddenBox = $( "#banner-message" );
+                   $( "#button-container button" ).on( "click", function( event ) {
+                     hiddenBox.show();
+                   });
+            </code></pre>
+
+            <p>有序列表则使用数字接着一个英文句点：</p>
+            <pre><code>1.  Bird
+            2.  McHale
+            3.  Parish
+            </code></pre>
+
+            <div class="wiki-list">
+            <h4>学习推荐网站</h4>
+            <ul class="clearfix">
+              <li><a href="javascript:;">---jQuery学习网站---</a></li>
+              <li><a href="javascript:;">---jQuery学习网站---</a></li>
+              <li><a href="javascript:;">---jQuery学习网站---</a></li>
+              <li><a href="javascript:;">---jQuery学习网站---</a></li>
+              <li><a href="javascript:;">---jQuery学习网站---</a></li>
+              <li><a href="javascript:;">---jQuery学习网站---</a></li>
+              <li><a href="javascript:;">---jQuery学习网站---</a></li>
+              <li><a href="javascript:;">---jQuery学习网站---</a></li>
+              <li><a href="javascript:;">---jQuery学习网站---</a></li>
+              <li><a href="javascript:;">---jQuery学习网站---</a></li>
+              <li><a href="javascript:;">---jQuery学习网站---</a></li>
+              <li><a href="javascript:;">---jQuery学习网站---</a></li>
+              <li><a href="javascript:;">---jQuery学习网站---</a></li>
+              <li><a href="javascript:;">---jQuery学习网站---</a></li>
+              <li><a href="javascript:;">---jQuery学习网站---</a></li>
+              <li><a href="javascript:;">---jQuery学习网站---</a></li>
+              <li><a href="javascript:;">---jQuery学习网站---</a></li>
+              <li><a href="javascript:;">---jQuery学习网站---</a></li>
+              <li><a href="javascript:;">---jQuery学习网站---</a></li>
+              <li><a href="javascript:;">---jQuery学习网站---</a></li>
+              <li><a href="javascript:;">---jQuery学习网站---</a></li>
+            </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 右侧主体部分end -->
+    </div>
+  </div>
+<!-- 查看笔记 -->
+  <div class="modal fade" tabindex="-1" id="checknote">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span>&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="myModalLabel">笔记</h4>
+        </div>
+        <div class="modal-body">
+          <p ms-repeat-el="noteContentList">{{ el }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- 查看笔记 end -->
+<!-- 添加笔记 -->
+  <div class="modal fade" tabindex="-1" id="addnote">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" ms-click="btnClose">
+            <span>&times;</span><span class="sr-only">Close</span>
+          </button>
+          <h4 class="modal-title">添加笔记</h4>
+        </div>
+        <div class="modal-body">
+          <form class="modal-form" id="add-note-form">
+            <div class="form-group clearfix" ms-repeat-el="addList">
+              <label class="col-sm-2 control-label">添加笔记</label>
+              <div class="col-sm-9">
+                <textarea class="form-control" rows="2" name="note[]" ms-duplex="el.content"></textarea>
+              </div>
+            </div>
+            <div class="add-item" ms-click="addItem">
+              <span class="glyphicon glyphicon-plus"></span>
+              <span>添加</span>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary"  data-dismiss="modal" ms-click="btnNoteSave">保存</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- 添加笔记 end -->
+  <script>
+  window.oYpConfig = {
+    // js根路径
+    baseUrl: '../j/'
+  };
+
+  // 页面URL请求配置
+  window.oPageConfig = {
+    oUrl: {
+      note: '/note'
+    }
+  , oData: {
+      noteContentList: [
+        '笔记0', '笔记1'
+      ]
+    }
+  }
+</script>
+  <script src="../j/yp/lib/yp-min.js"></script>
+  <script src="../j/test/skill/skill-share.js"></script>
+  <script src="../j/skill/skill-learn.js"></script>
+</body>
+</html>

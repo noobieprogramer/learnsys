@@ -1,0 +1,242 @@
+/******************************
+ * Time : 2014-07-21
+ ******************************
+ * Author : hanyanhong
+ ****************************** */
+
+
+/* header */
+.ls-header {
+  width: 100%;
+  background: url(../i/header-bg.jpg) repeat;
+  font-family: microsoft yahei;
+}
+.ls-header .container {
+  width: 100%;
+}
+
+/*logo*/
+.ls-header .logo {
+  display: block;
+  float: left;
+  width: 200px;
+  height: 50px;
+  background-color: #f60;
+  line-height: 50px;
+  text-align: center;
+}
+
+/*nav*/
+.ls-header .nav {
+  float: left;
+  overflow: hidden;
+}
+.ls-header .nav-pills >li {
+  margin-left: -1px;
+}
+.ls-header .nav-pills >li >a {
+  height: 16px;
+  margin: 17px 0;
+  padding: 0 15px;
+  border-left: 1px solid #418bb9;
+  border-radius: 0;
+  font-size: 16px;
+  line-height: 16px;
+  color: #cedbe6;
+}
+.ls-header .nav >li >a:hover,
+.ls-header .nav >li >a:focus {
+  background-color: transparent;
+  color: #fff;
+}
+
+/*login*/
+.ls-header .dropdown {
+  float: right;
+  margin-top: 8px;
+}
+
+/* header end */
+
+
+/* 描述 */
+.describe {
+  border-bottom: 1px solid #c2d4de;
+  background-color: #e9f0f4;
+  font-family: microsoft yahei;
+}
+.describe .container {
+  width: 100%;
+}
+.describe .input-group {
+  margin-top: 30px;
+}
+/* 描述 end */
+
+
+/* 背景 */
+.bg-blue-dark {
+  background-color: #3b7ac8;
+}
+.bg-blue-light {
+  background-color: #21a9e1;
+}
+.bg-purple {
+  background-color: #b94cbf;
+}
+.bg-yellow {
+  background-color: #eab31e;
+}
+.bg-green {
+  background-color: #77a037;
+}
+.bg-pink {
+  background-color: #ce496d;
+}
+.bg-orange {
+  background-color: #ff6d4a;
+}
+/* 背景 end */
+
+
+/* 字色 */
+.text-blue-dark {
+  color: #105984;
+}
+.text-blue-light {
+  color: #3d84ae;
+}
+
+.text-grey-333 {
+  color: #333;
+}
+.text-grey-666 {
+  color: #666;
+}
+.text-grey-999 {
+  color: #999;
+}
+.text-grey-ccc {
+  color: #ccc;
+}
+
+.text-green {
+  color: #629b25;
+}
+.text-orange {
+  color: #f1633d;
+}
+.text-pink {
+  color: #fd5555;
+}
+/* 字色 end */
+
+
+/* ls-list */
+.ls-list {
+  overflow: hidden;
+  margin-top: 50px;
+  padding: 0 25px;
+}
+.ls-list ul {
+  float: left;
+  width: 280px;
+  padding: 0;
+  list-style: none;
+}
+.ls-list ul li {
+  float: left;
+  margin: 0 5px 10px;
+}
+.ls-list ul li a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+}
+
+.ls-list .big {
+  position: relative;
+  overflow: hidden;
+  width: 270px;
+  height: 150px;
+}
+.ls-list .small {
+  position: relative;
+  overflow: hidden;
+  width: 130px;
+  height: 150px;
+}
+
+.ls-list .icons {
+  padding-top: 30px;
+  font-size: 50px;
+  text-align: center;
+}
+/* ls-list end */
+
+
+/* ls-wrap */
+.ls-wrap {
+  overflow: hidden;
+  width: 100%;
+  background-color: #e9f0f4;
+}
+
+
+/* menu */
+.ls-menu {
+  float: left;
+  overflow: hidden;
+  width: 220px;
+  color: #666;
+}
+.ls-menu ul {
+  padding: 0;
+  list-style: none;
+}
+.ls-menu a:hover {
+  text-decoration: none;
+}
+.ls-menu .hasSubmenu a {
+  display: block;
+  padding-left: 20px;
+  background-color: #cce1ed;
+  font-size: 18px;
+  line-height: 60px;
+  color: #105984;
+}
+.ls-menu .hasSubmenu span {
+  font-family: microsoft yahei;
+}
+.ls-menu .hasSubmenu .in {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.ls-menu .hasSubmenu .in a {
+  margin: 5px 0;
+  background-color: #e9f0f4;
+  font-size: 16px;
+  line-height: 35px;
+  color: #666;
+}
+.ls-menu .hasSubmenu .in a:hover {
+  color: #333;
+}
+.ls-menu .hasSubmenu .active a,
+.ls-menu .hasSubmenu .active a:hover {
+  border-radius: 17px;
+  background-color: #2071a1;
+  color: #fff;
+}
+
+/* content */
+.ls-content {
+  min-height: 622px;
+  margin-left: 220px;
+  border-left: 1px solid #c2d4de;
+  background-color: #fff;
+}
+
+.ls-content .container {
+  width: 100%;
+}

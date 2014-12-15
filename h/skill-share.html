@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>技能分享</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../c/common.css">
+  <link rel="stylesheet" href="../c/skill.css">
+  <style>
+    [ms-controller] {
+      display: none;
+    }
+  </style>
+</head>
+<body ms-controller="skillShare">
+  <!-- header -->
+  <div class="ls-header">
+    <div class="container">
+      <!-- logo -->
+      <a href="javascript:;" class="logo">logo</a>
+      <!-- logo end -->
+      
+      <!-- nav -->
+      <ul class="nav nav-pills">
+        <li><a href="javascript:;">首页</a></li>
+        <li><a href="javascript:;">最新动态</a></li>
+        <li><a href="javascript:;">技能管理</a></li>
+        <li><a href="javascript:;">我的题库</a></li>
+        <li><a href="javascript:;">用户中心</a></li>
+      </ul>
+      <!-- nav -->
+
+      <!-- user -->
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+          用户名
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="javascript:;">补填资料</a></li>
+          <li><a tabindex="-1" href="javascript:;">修改密码</a></li>
+          <li><a tabindex="-1" href="javascript:;">其他</a></li>
+        </ul>
+      </div>
+      <!-- user end -->
+    </div>
+  </div>
+  <!-- header end -->
+
+  <!-- 描述 -->
+  <div class="describe">
+    <div class="container">
+      <div class="col-md-9">
+        <h2 class="text-blue-dark">技能分享</h2>
+        <p>技能分享模块</p>
+      </div>
+      <div class="col-md-3">
+        <div class="input-group">
+          <input type="text" class="form-control">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">搜索</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 描述 end -->
+
+  <!-- 主体 -->
+  <div class="wrap">
+    <div class="web-document clearfix">
+      <div class="web-content">
+        <ol class="breadcrumb">
+          <li><a href="javascript:;">首页</a></li>
+          <li><a href="javascript:;">技能模块</a></li>
+          <li class="active">技能分享</li>
+        </ol>
+        <div class="cont clearfix">
+          <ul class="nav nav-tabs nav-justified demand-tab">
+            <li class="active"><a href="#common" data-toggle="tab">分享列表</a></li>
+            <li><a href="#art" data-toggle="tab">发布分享</a></li>
+          </ul>
+          <div class="tab-content" id="myTab">
+            <!-- tab1 -->
+            <div class="tab-pane active" id="common">
+              <div class="row">
+                <div class="col-md-8">
+                  <a href="javascript:;" class="mod row bg-yellow">
+                    <div class="icons col-sm-3">
+                      <span class="glyphicon glyphicon-list"></span>
+                    </div>
+                    <h2 class="mod-name">所有分享</h2>
+                  </a>
+                  <div>
+                    <table class="table web-table table-hover">
+                      <thead>
+                        <th width="15%">时间</th>
+                        <th width="55%">标题</th>
+                        <th width="20%">用户</th>
+                        <th width="10%">访问</th>
+                      </thead>
+                      <tbody>
+                        <tr ms-repeat-el="shareList">
+                          <td>{{ el.date }}</td>
+                          <td><a href="javascript:;">{{ el.title }}</a></td>
+                          <td>{{ el.username }}</td>
+                          <td><span>{{ el.reply }}</span>/<span>{{ el.visit }}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <a href="javascript:;" class="mod row bg-pink">
+                    <div class="icons col-sm-3">
+                      <span class="glyphicon glyphicon-list"></span>
+                    </div>
+                    <h2 class="mod-name">排行榜</h2>
+                  </a>
+                  <div>
+                    <table class="table web-table table-hover">
+                      <thead>
+                        <th width="15%">时间</th>
+                        <th width="70%">标题</th>
+                        <th width="15%">访问</th>
+                      </thead>
+                      <tbody>
+                        <tr ms-repeat-el="rankList">
+                          <td>{{ el.date }}</td>
+                          <td><a href="javascript:;">{{ el.title }}</a></td>
+                          <td><span>{{ el.reply }}</span>/<span>{{ el.visit }}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- tab1 end -->
+            <!-- tab2 -->
+            <div class="tab-pane" id="art">
+              <form class="form-horizontal" id="form-share">
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">标题</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control validate" data-valid="required" name="reqName" ms-duplex="shareTitle" placeholder="标题">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">原文链接</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control validate" data-valid="required" name="reqLink" placeholder="原文链接http://...">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">内容</label>
+                  <div class="col-sm-6">
+                    <textarea id="editor_id" name="content" style="width:668px;height:300px;"></textarea>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-3 col-sm-9">
+                    <button type="button" class="btn btn-warning" ms-click="ypShareBtnSubmit">提交</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- tab2 end -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- 主体 end -->
+
+  <script>
+    window.oYpConfig = {
+      // js根路径
+      baseUrl: '../j/'
+    };
+
+    // 页面URL请求配置
+    window.oPageConfig = {
+      oUrl: {
+        note: '/note'
+      }
+    , oData: {
+        shareList: {
+          date: '2014/07/28'
+        , title: 'titletitletitletitle'
+        , username: 'wangrubing'
+        , reply: '2'
+        , visit: '10'
+        }
+      , rankList: {
+          date: '2014/08/28'
+        , title: 'titletitletitletitle'
+        , username: 'wangrubing'
+        , reply: '4'
+        , visit: '10'
+        }
+      }
+    };
+  </script>
+  <script src="../j/yp/lib/yp-min.js"></script>
+  <script src="../j/skill/skill-share.js"></script>
+</body>
+</html>
