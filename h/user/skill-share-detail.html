@@ -3,12 +3,12 @@
 <head>
   <title>文章详情</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="../dist/css/bootstrap.css">
-  <link rel="stylesheet" href="../c/common.css">
-  <link rel="stylesheet" href="../c/skill.css">
+  <link rel="stylesheet" href="../../dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../../c/common.css">
+  <link rel="stylesheet" href="../../c/skill.css">
   <style>
     [ms-controller] {
-      display: none;
+      /*display: none;*/
     }
   </style>
 </head>
@@ -19,7 +19,7 @@
       <!-- logo -->
       <a href="javascript:;" class="logo">logo</a>
       <!-- logo end -->
-      
+
       <!-- nav -->
       <ul class="nav nav-pills">
         <li><a href="javascript:;">首页</a></li>
@@ -103,7 +103,7 @@
               <h1>This is a title</h1>
             </div>
             <div class="media task-image">
-              <a class="pull-left" href="javascript:;"><img class="media-object" src="../i/default_s.jpg" alt="..."></a>
+              <a class="pull-left" href="javascript:;"><img class="media-object" src="../../i/default_s.jpg" alt="..."></a>
               <div class="media-body">
                 <p class="text-grey-666">
                   作者：<span class="text-green">hxw </span> 时间：<span>2014年5月20日 14:23</span>
@@ -124,7 +124,7 @@
           <h3>评论</h3>
           <ul class="list-style list-unstyled task-history">
             <li ms-repeat="commentData"><div class="media">
-              <a class="pull-left" href="javascript:;"><img class="media-object" src="../i/default_s.jpg"></a>
+              <a class="pull-left" href="javascript:;"><img class="media-object" src="../../i/default_s.jpg"></a>
               <div class="media-body">
                 <h4 class="media-heading"><span class="pull-right text-orange">#{{ $index + 1 }}</span>{{ el.username }}</h4>
                 <pre class="pre">{{ el.content }}</pre>
@@ -160,7 +160,7 @@
         <input type="text" name="title" value="This is a title" class="share-title">
       </div>
       <div class="media task-image">
-        <a class="pull-left" href="javascript:;"><img class="media-object" src="../i/default_s.jpg" alt="..."></a>
+        <a class="pull-left" href="javascript:;"><img class="media-object" src="../../i/default_s.jpg" alt="..."></a>
         <div class="media-body">
           <p class="text-grey-666">
             作者：<span class="text-green">hxw </span>
@@ -182,7 +182,7 @@
   <script>
     window.oYpConfig = {
       // js根路径
-      baseUrl: '../j/'
+      baseUrl: '../../j/'
     };
     // 页面URL请求配置
     window.oPageConfig = {
@@ -206,8 +206,8 @@
       }
     }
   </script>
-  <script src="../j/yp/lib/yp-min.js"></script>
-  <script src="../j/test/skill/skill-share.js"></script>
-  <script src="../j/skill/skill-learn.js"></script>
+  <script src="../../j/yp/lib/yp-min.js"></script>
+  <script src="../../j/test/skill/skill-share.js"></script>
+  <script src="../../j/skill/skill-learn.js"></script>
 </body>
 </html>

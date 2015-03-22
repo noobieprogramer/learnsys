@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>题库模块</title>
-  <link rel="stylesheet" href="../dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../c/common.css">
-  <link rel="stylesheet" href="../c/exercises.css">
+  <link rel="stylesheet" href="../../dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../c/common.css">
+  <link rel="stylesheet" href="../../c/exercises.css">
 </head>
 <body>
 
@@ -45,7 +45,7 @@
 <!-- header end -->
 
 <!-- 描述 -->
-<div class="describe">
+<div class="describe" ms-controller="searchModel">
   <div class="container">
     <div class="col-md-9">
       <h2 class="text-blue-dark">模块名称</h2>
@@ -63,35 +63,32 @@
 </div>
 <!-- 描述 end -->
 
-<div ms-controller="exerciseModel">
-  <!-- 题列表 -->
+<!-- 技能 -->
+<div ms-controller="skillModel">
+  <!-- 技能添加 -->
   <div class="container">
     <!-- title -->
     <div class="ls-title clearfix">
-      <a ms-click="fAdd" href="javascript:;" class="pull-right btn btn-primary"><span class="glyphicon glyphicon-plus"></span> 添加习题</a>
-      <h2>题添加模块</h2>
+      <a ms-click="fAdd" href="javascript:;" class="pull-right btn btn-primary"><span class="glyphicon glyphicon-plus"></span> 添加技能</a>
+      <h2>技能添加模块</h2>
     </div>
     <!-- title end -->
-
-    <!-- 提示 -->
-    <div class="well clearfix">
-      <div class="col-md-4">技能名称：Node</div>
-      <div class="col-md-4">分类：Js</div>
-      <div class="col-md-4">有效期：6个月</div>
-    </div>
-    <!-- 提示 end -->
 
     <!-- 列表 -->
     <table class="table table-striped table-bordered table-hover">
       <thead>
         <tr>
-          <th width="40%">题目</th>
+          <th width="40%">技能名称</th>
+          <th width="20%">分类</th>
+          <th width="20%">有效期</th>
           <th width="15%" class="text-center">操作</th>
         </tr>
       </thead>
       <tbody ms-each-el="list">
         <tr>
-          <td>{{el.qtitle}}</td>
+          <td>{{el.skillname}}</td>
+          <td>{{typesHash[el.type].name}}</td>
+          <td>{{timeScalesHash[el.availtime].name}}</td>
           <td class="text-center">
             <a href="javascript:;" ms-click="fSee(el)" class="btn btn-sm btn-primary" title="查看"><span class="glyphicon glyphicon-eye-open"></span></a>
             <a href="javascript:;" ms-click="fEdit(el)" class="btn btn-sm btn-primary" title="编辑"><span class="glyphicon glyphicon-edit"></span></a>
@@ -108,41 +105,38 @@
     </div>
     <!-- 分页 -->
   </div>
-  <!-- 题列表 end -->
-
-  <!-- modal：题添加 -->
-  <div class="modal"  id="infoModal" tabindex="-1" role="dialog">
+  <!-- 技能添加 end -->
+  <!-- modal：技能添加 -->
+  <div class="modal" id="infoModal" tabindex="-1" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-          <h4 class="modal-title">题添加</h4>
+          <h4 class="modal-title">技能添加</h4>
         </div>
         <div class="modal-body">
           <form class="form-horizontal" role="form" ms-each-info="infos">
-            <input type="hidden" class="form-control" name="skillid">
-            <input type="hidden" class="form-control" name="qid" ms-value="info.qid">
+            <input type="hidden" class="form-control" name="skillid" ms-value="info.skillid">
             <div class="form-group">
-              <label for="inputEmail3" class="col-sm-2 control-label">题目</label>
+              <label for="inputEmail3" class="col-sm-2 control-label">技能名称</label>
               <div class="col-sm-10">
-                <input type="text" name="qtitle" ms-disabled="info['isSee']" class="form-control" placeholder="题目名称" data-valid="{'type': 'txt'}" ms-value="info.qtitle">
+                <input type="text" name="skillname" ms-disabled="info['isSee']" class="form-control" placeholder="技能名称" data-valid="{'type': 'txt'}" ms-value="info.skillname">
               </div>
             </div>
-            <div ms-each-question="info['qoptions']">
-              <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">选项</label>
-                <div class="col-sm-8">
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="standard_answer" ms-value="question['option']" ms-disabled="info['isSee']" ms-checked="info['standard_answer'] == question['option']">
-                      <input type="text" class="form-control" name="content[]" placeholder="选项内容"  ms-disabled="info['isSee']" data-valid="{'type': 'txt'}" ms-value="question['content']">
-                    </label>
-                  </div>
-                </div>
-               <!--  <div class="col-sm-2 text-right ls-pl0" ms-if="info['isAdd']">
-                  <button type="button" class="btn btn-primary" ms-click="fAddOption($event)"><span class="glyphicon glyphicon-plus-sign"></span></button>
-                  <button type="button" class="btn btn-primary" ms-click="fDelOption($event)"><span class="glyphicon glyphicon-minus-sign"></span></button>
-                </div> -->
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-2 control-label">分类</label>
+              <div class="col-sm-10">
+                <select class="form-control" ms-change="fChangeType($event, info)" ms-disabled="info['isSee']" ms-each-el="types" name="type">
+                  <option ms-value="el.id" ms-selected=" el.id == info['type']">{{el.name}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-2 control-label">有效期</label>
+              <div class="col-sm-10">
+                <select class="form-control" ms-change="fChangeTime($event, info)" ms-disabled="info['isSee']" ms-each-el="timeScales" name="availtime">
+                  <option ms-value="el.id" ms-selected=" el.id == info['availtime']">{{el.name}}</option>
+                </select>
               </div>
             </div>
             <div class="form-group">
@@ -156,42 +150,26 @@
       </div>
     </div>
   </div>
-  <!-- modal：题添加 end -->
+  <!-- modal：技能添加 end -->
 </div>
-
-<script type="text/avalon" id="template">
-  <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label">选项</label>
-    <div class="col-sm-8">
-      <div class="radio">
-        <label>
-          <input type="radio" name="standard_answer" ms-value="question['option']" ms-disabled="info['isSee']" ms-checked="info['standard_answer'] == question['option']">
-          <input type="text" class="form-control" name="content[]" placeholder="选项内容"  ms-disabled="info['isSee']" data-valid="{'type': 'txt'}" ms-value="question['content']">
-        </label>
-      </div>
-    </div>
-    <div class="col-sm-2 text-right ls-pl0" ms-if="info['isAdd']">
-      <button type="button" class="btn btn-primary" ms-click="fDelOption($event)"><span class="glyphicon glyphicon-minus-sign"></span></button>
-    </div>
-  </div>
-</script>
+<!-- 技能 end -->
 
 <script>
   window.oYpConfig = {
     // js根路径
-    baseUrl: '../j/'
+    baseUrl: '../../j/'
   };
 
   // 页面URL请求配置
   window.oPageConfig = {
     oUrl: {
-      list: 'question/getAll'
-    , del: 'question/del'
-    , edit: 'question/edit'
-    , add: 'question/new'
+      list: 'skill/get'
+    , del: 'skill/del'
+    , edit: 'skill/edit'
+    , add: 'skill/new'
     }
   , oData: {
-      // 分类
+    // 分类
       types: [
         {
           id: 1
@@ -202,7 +180,7 @@
         , name: 'css'
         }
       ]
-      // 有效期
+    // 有效期
     , timeScales: [
         {
           id: 1
@@ -213,41 +191,19 @@
         , name: '一个年'
         }
       ]
+    // 技能
     , defaultSkill: {
         skillid: ''
       , skillname: ''
       , type: ''
       , availtime: ''
       }
-    , defaultExercise: {
-        qid: ''
-      , qtitle: ''
-      , qoptions: [
-          {
-            option: 'A'
-          , content: ''
-          }
-        , {
-            option: 'B'
-          , content: ''
-          }
-        , {
-            option: 'C'
-          , content: ''
-          }
-        , {
-            option: 'D'
-          , content: ''
-          }
-        ]
-      , standard_answer: ''
-      }
     }
   }
 
 </script>
-<script src="../j/yp/lib/yp-min.js"></script>
-<script src="../j/test/exercises/test.js"></script>
-<script src="../j/exercises/exercisesList.js"></script>
+<script src="../../j/yp/lib/yp-min.js"></script>
+<script src="../../j/test/exercises/test.js"></script>
+<script src="../../j/exercises/skillList.js"></script>
 </body>
 </html>
